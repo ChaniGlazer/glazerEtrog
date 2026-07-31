@@ -251,6 +251,56 @@
   .product-card h3{font-size:1.1rem; margin-bottom:8px; font-weight:700;}
   .product-card p{font-size:0.9rem; color:var(--ink-soft); font-weight:300;}
 
+  /* gallery */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+  }
+  .gallery-item{
+    position:relative;
+    aspect-ratio:4/3;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--surface);
+  }
+  .gallery-item img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    cursor:zoom-in;
+    transition:transform .4s var(--ease);
+  }
+  .gallery-item img:hover{transform:scale(1.04);}
+  .gallery-item.placeholder{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:10px;
+    border:1.5px dashed var(--line);
+  }
+  .gallery-item.placeholder svg{width:26px; height:26px; color:var(--ink-faint);}
+  .gallery-item.placeholder span{font-size:0.8rem; color:var(--ink-faint); font-weight:300;}
+  .gallery-item .num{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:0.85rem;
+    color:var(--gold-deep);
+  }
+
+  .lightbox{
+    position:fixed; inset:0; z-index:300;
+    background:rgba(38,43,28,0.92);
+    display:none; align-items:center; justify-content:center;
+    padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%; max-height:100%; box-shadow:0 20px 60px rgba(0,0,0,0.4);}
+  .lightbox-close{
+    position:absolute; top:24px; left:24px;
+    width:42px; height:42px; border-radius:50%;
+    background:var(--bg); color:var(--ink);
+    border:none; font-size:1.3rem; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+
   /* locations */
   .locations{background:var(--bg2);}
   .loc-grid{
@@ -356,6 +406,7 @@
     .hero-inner{grid-template-columns:1fr;}
     .hero-art{max-width:460px; margin:32px auto 0;}
     .product-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
     .loc-grid{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr; gap:50px;}
     .info-chips{gap:28px;}
@@ -387,6 +438,7 @@
     .hero-actions .btn{width:100%; justify-content:center;}
     .info-chips{flex-direction:column; align-items:flex-start; gap:18px;}
     .product-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr;}
     .footer-row{flex-direction:column; align-items:center; text-align:center;}
   }
   @media(max-width:400px){
@@ -454,6 +506,10 @@
       <circle cx="14" cy="14" r="10"/>
       <path d="M9.5 14.5l3 3 6-6.5"/>
     </g>
+    <g id="ic-camera" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 9.5c0-1.1.9-2 2-2h2l1.6-2h4.8L16 7.5h2c1.1 0 2 .9 2 2V18c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V9.5z"/>
+      <circle cx="12" cy="14" r="3.6"/>
+    </g>
   </defs>
 </svg>
 
@@ -466,6 +522,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#boutique">אתרוגי בוטיק</a></li>
       <li><a href="#products">ארבעת המינים</a></li>
+      <li><a href="#gallery">גלריה</a></li>
       <li><a href="#locations">הסניפים שלנו</a></li>
       <li><a href="#contact">צור קשר</a></li>
     </ul>
@@ -580,6 +637,29 @@
   </div>
 </section>
 
+<section id="gallery">
+  <div class="container">
+    <div class="head-block reveal">
+      <span class="eyebrow">מהשטח</span>
+      <h2 class="section-title">תמונות מהמכירה</h2>
+      <p class="section-sub">הצצה לסניף ולמבחר האתרוגים שלנו. התמונות האמיתיות יעלו בקרוב.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item placeholder"><span class="num">01</span><svg viewBox="0 0 28 26"><use href="#ic-camera"/></svg><span>תמונה תתווסף</span></div>
+      <div class="gallery-item placeholder"><span class="num">02</span><svg viewBox="0 0 28 26"><use href="#ic-camera"/></svg><span>תמונה תתווסף</span></div>
+      <div class="gallery-item placeholder"><span class="num">03</span><svg viewBox="0 0 28 26"><use href="#ic-camera"/></svg><span>תמונה תתווסף</span></div>
+      <div class="gallery-item placeholder"><span class="num">04</span><svg viewBox="0 0 28 26"><use href="#ic-camera"/></svg><span>תמונה תתווסף</span></div>
+      <div class="gallery-item placeholder"><span class="num">05</span><svg viewBox="0 0 28 26"><use href="#ic-camera"/></svg><span>תמונה תתווסף</span></div>
+      <div class="gallery-item placeholder"><span class="num">06</span><svg viewBox="0 0 28 26"><use href="#ic-camera"/></svg><span>תמונה תתווסף</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="סגירה">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <section id="locations" class="locations">
   <div class="container">
     <div class="head-block reveal">
@@ -693,6 +773,23 @@
     const text = `שלום, שמי ${name}, טלפון: ${phone}. הודעה: ${message}`;
     window.open('https://wa.me/972506409977?text=' + encodeURIComponent(text), '_blank');
   });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  }
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
