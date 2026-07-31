@@ -26,6 +26,7 @@
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
+  html, body{overflow-x:hidden; max-width:100%;}
   body{
     font-family:'Heebo', 'Segoe UI', Arial, sans-serif;
     background:var(--bg);
@@ -403,7 +404,7 @@
 
   @media(max-width:960px){
     .hero-inner{grid-template-columns:1fr;}
-    .hero-panel{order:-1; max-width:420px;}
+    .hero-panel{order:-1; max-width:420px; margin-inline:auto;}
     .boutique-inner{grid-template-columns:1fr;}
     .boutique-inner .hero-panel{order:-1; max-width:420px; margin-inline:auto;}
     .product-grid{grid-template-columns:repeat(2,1fr);}
@@ -411,21 +412,40 @@
     .contact-grid{grid-template-columns:1fr; gap:50px;}
   }
   @media(max-width:760px){
+    .container{padding:0 20px;}
+    section{padding:60px 0;}
+    .hero{padding:48px 0 44px;}
+    nav{padding:14px 0;}
+    .logo{font-size:1rem; gap:8px;}
+    .logo .mark{width:30px; height:30px;}
     .nav-links{
       position:absolute;
       top:100%; right:0; left:0;
       background:var(--bg);
       flex-direction:column;
-      padding:22px 28px;
+      padding:22px 20px;
       border-bottom:1px solid var(--line);
       display:none;
       gap:18px;
     }
     .nav-links.open{display:flex;}
     .menu-toggle{display:flex;}
+    .nav-cta{gap:8px;}
     .nav-cta .btn-outline{display:none;}
-    section{padding:64px 0;}
-    .hero{padding:56px 0 50px;}
+    .nav-cta .btn{padding:10px 12px;}
+    .nav-cta .btn-label{display:none;}
+    .hero-actions{flex-direction:column; align-items:stretch;}
+    .hero-actions .btn{width:100%; justify-content:center;}
+    .hero-panel, .boutique-inner .hero-panel{padding:26px;}
+    .icon-tile{padding:18px 6px;}
+    .icon-tile svg{width:28px; height:28px; margin-bottom:8px;}
+    .product-grid{grid-template-columns:1fr;}
+    .footer-row{flex-direction:column; align-items:center; text-align:center;}
+  }
+  @media(max-width:400px){
+    .container{padding:0 16px;}
+    .logo{font-size:0.92rem;}
+    .btn{padding:12px 20px; font-size:0.88rem;}
   }
 </style>
 </head>
@@ -503,8 +523,8 @@
       <li><a href="#contact">צור קשר</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="tel:0527159955" class="btn btn-outline"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg>052-715-9955</a>
-      <a href="https://wa.me/972506409977" target="_blank" class="btn btn-whatsapp"><svg viewBox="0 0 24 24"><use href="#ic-chat"/></svg>וואטסאפ</a>
+      <a href="tel:0527159955" class="btn btn-outline"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg><span class="btn-label">052-715-9955</span></a>
+      <a href="https://wa.me/972506409977" target="_blank" class="btn btn-whatsapp"><svg viewBox="0 0 24 24"><use href="#ic-chat"/></svg><span class="btn-label">וואטסאפ</span></a>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="תפריט">
       <span></span><span></span><span></span>
