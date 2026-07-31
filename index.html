@@ -401,9 +401,8 @@
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <g id="ic-etrog" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <ellipse cx="24" cy="27" rx="12.5" ry="16.5"/>
-      <path d="M24 10.5c0-2.5 1.6-4 1.6-6.5"/>
-      <path d="M24 43.5c0 2 1.2 2.6 1.2 3.8"/>
+      <path d="M24 9c7 1 12 8 11.5 16.5-.5 9-4.5 15-11.5 18.5-7-3.5-11-9.5-11.5-18.5C11.5 17 17 8 24 9z"/>
+      <path d="M22.5 9.2C22 7 23.3 5.6 22.6 3.4"/>
     </g>
     <g id="ic-lulav" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <line x1="24" y1="4" x2="24" y2="44"/>
@@ -491,33 +490,40 @@
       </div>
     </div>
     <div class="hero-art reveal">
-      <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 320 460" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="heroGlow" cx="50%" cy="42%" r="55%">
+          <radialGradient id="heroGlow" cx="50%" cy="40%" r="60%">
             <stop offset="0%" stop-color="#e9d9a0"/>
             <stop offset="100%" stop-color="#e9d9a0" stop-opacity="0"/>
           </radialGradient>
-          <linearGradient id="heroEtrog" x1="10%" y1="0%" x2="90%" y2="100%">
-            <stop offset="0%" stop-color="#e9d27f"/>
-            <stop offset="55%" stop-color="#c99a35"/>
-            <stop offset="100%" stop-color="#9c7420"/>
+          <linearGradient id="heroEtrog" x1="8%" y1="0%" x2="88%" y2="100%">
+            <stop offset="0%" stop-color="#f2e58f"/>
+            <stop offset="38%" stop-color="#e0c257"/>
+            <stop offset="70%" stop-color="#c49a34"/>
+            <stop offset="100%" stop-color="#8f6a1f"/>
           </linearGradient>
+          <clipPath id="etrogSilhouette">
+            <path d="M160,42 C198,45 222,90 224,150 C226,215 229,270 214,321 C200,368 182,405 166,428 C164,431 161,433 159,434 C151,410 130,372 112,322 C96,275 92,218 96,155 C100,92 124,46 160,42 Z"/>
+          </clipPath>
+          <filter id="etrogSkin" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.14 0.11" numOctaves="3" seed="9" result="n"/>
+            <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.36  0 0 0 0 0.27  0 0 0 0 0.07  0 0 0 0.55 0"/>
+          </filter>
         </defs>
-        <circle cx="210" cy="190" r="175" fill="url(#heroGlow)"/>
-        <circle cx="210" cy="190" r="150" fill="none" stroke="#c9b476" stroke-width="1"/>
-        <g transform="translate(210,205)">
-          <path d="M0,-118 C58,-111 87,-57 82,7 C77,74 30,119 -30,112 C-90,105 -117,47 -107,-17 C-97,-84 -50,-124 0,-118 Z" fill="url(#heroEtrog)" stroke="#6b501a" stroke-width="1.6"/>
-          <path d="M-46,-50 C-22,-72 24,-72 48,-38" fill="none" stroke="#efe0a8" stroke-width="1.2" opacity="0.55"/>
-          <path d="M-58,10 C-24,24 24,26 58,4" fill="none" stroke="#efe0a8" stroke-width="1.2" opacity="0.55"/>
-          <path d="M0,-118 C-3,-134 6,-144 3,-160" fill="none" stroke="#3f5536" stroke-width="3.2" stroke-linecap="round"/>
-          <path d="M-10,-146 C-4,-154 8,-156 15,-148" fill="none" stroke="#3f5536" stroke-width="2.6" stroke-linecap="round"/>
+
+        <circle cx="160" cy="210" r="185" fill="url(#heroGlow)"/>
+        <ellipse cx="160" cy="440" rx="58" ry="10" fill="#8f6a1f" opacity="0.16"/>
+
+        <g clip-path="url(#etrogSilhouette)">
+          <rect x="70" y="30" width="180" height="410" fill="url(#heroEtrog)"/>
+          <rect x="70" y="30" width="180" height="410" filter="url(#etrogSkin)" opacity="0.5" style="mix-blend-mode:multiply"/>
+          <ellipse cx="130" cy="150" rx="46" ry="88" fill="#fff8d6" opacity="0.28"/>
         </g>
-        <g transform="translate(115,330) rotate(-16)">
-          <path d="M0,0 C12,-16 32,-18 42,-8 C28,4 10,10 0,0 Z" fill="#3f5536"/>
-        </g>
-        <g transform="translate(300,330) rotate(16)">
-          <path d="M0,0 C-12,-16 -32,-18 -42,-8 C-28,4 -10,10 0,0 Z" fill="#3f5536"/>
-        </g>
+        <path d="M160,42 C198,45 222,90 224,150 C226,215 229,270 214,321 C200,368 182,405 166,428 C164,431 161,433 159,434 C151,410 130,372 112,322 C96,275 92,218 96,155 C100,92 124,46 160,42 Z"
+              fill="none" stroke="#7d5c19" stroke-width="1.6"/>
+
+        <path d="M154,43 C152,33 160,28 157,18 C164,26 170,34 166,44" fill="#54622f" stroke="#3c481f" stroke-width="1"/>
+        <circle cx="160" cy="431" r="2.6" fill="#6b551c"/>
       </svg>
     </div>
   </div>
