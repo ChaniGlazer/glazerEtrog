@@ -255,8 +255,7 @@
   .gallery-viewport{
     overflow:hidden;
     width:100%;
-    mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-    -webkit-mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    direction:ltr;
   }
   .gallery-track{
     display:flex;
@@ -274,7 +273,7 @@
   }
   .gallery-item{
     position:relative;
-    flex:0 0 clamp(170px, 21vw, 235px);
+    flex:0 0 calc((100% - 48px) / 4);
     aspect-ratio:4/3;
     overflow:hidden;
     border:1px solid var(--line);
@@ -453,6 +452,7 @@
     .hero-actions .btn{width:100%; justify-content:center;}
     .info-chips{flex-direction:column; align-items:flex-start; gap:18px;}
     .product-grid{grid-template-columns:1fr;}
+    .gallery-item{flex:0 0 calc((100% - 16px) / 2);}
     .footer-row{flex-direction:column; align-items:center; text-align:center;}
   }
   @media(max-width:400px){
