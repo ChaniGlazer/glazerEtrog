@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="google-site-verification" content="9WV1dCAHBSeW7KSgqJxZBJn6ad91cq8Px2Jv8fJYY3s" />  
-<title>אתרוגי גלזר | אתרוגי בית חלקיה ובוטיק - בית שמש</title>
-<meta name="description" content="אתרוגי גלזר - אתרוגי בוטיק, ובהם אתרוגי בית חלקיה, וגם לולב, הדס וערבה. סניף מרכזי בנחל אוריה 19, בית שמש, ועוד סניפים ברמה ג׳, רמה ד׳ ועוד.">
+<title>אתרוגי גלזר | אתרוגי בית חלקיה ובוטיק</title>
+<meta name="description" content="אתרוגי גלזר - אתרוגי בוטיק, ובהם אתרוגי בית חלקיה, וגם לולב, הדס וערבה, לחג הסוכות.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -318,44 +318,6 @@
     display:flex; align-items:center; justify-content:center;
   }
 
-  /* locations */
-  .locations{background:var(--bg2);}
-  .loc-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-  }
-  .loc-card{
-    border:1px solid var(--line);
-    padding:30px 26px;
-    background:var(--surface);
-  }
-  .loc-card.main{border:1.5px solid var(--ink);}
-  .loc-tag{
-    display:inline-block;
-    font-size:0.7rem;
-    font-weight:700;
-    letter-spacing:1px;
-    padding:4px 12px;
-    background:var(--bg2);
-    color:var(--gold-deep);
-    margin-bottom:14px;
-  }
-  .loc-card.main .loc-tag{background:var(--ink); color:var(--bg);}
-  .loc-card h3{
-    font-size:1.05rem; margin-bottom:6px; display:flex; align-items:center; gap:8px; font-weight:700;
-  }
-  .loc-card h3 svg{width:16px; height:16px; color:var(--gold);}
-  .loc-card .addr{font-weight:600; color:var(--ink); margin-top:4px; font-family:'Assistant',sans-serif;}
-  .loc-card p.note{font-size:0.88rem; color:var(--ink-soft); margin-top:6px; font-weight:300;}
-  .loc-footnote{
-    margin-top:30px;
-    font-size:0.92rem;
-    color:var(--ink-soft);
-    font-weight:300;
-  }
-  .loc-footnote a{color:var(--gold-deep); font-weight:700;}
-
   /* contact */
   .contact-grid{
     display:grid;
@@ -423,7 +385,6 @@
     .hero-inner{grid-template-columns:1fr;}
     .hero-art{max-width:460px; margin:32px auto 0;}
     .product-grid{grid-template-columns:repeat(2,1fr);}
-    .loc-grid{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr; gap:50px;}
     .info-chips{gap:28px;}
   }
@@ -539,7 +500,6 @@
       <li><a href="#boutique">אתרוגי בוטיק</a></li>
       <li><a href="#products">ארבעת המינים</a></li>
       <li><a href="#gallery">גלריה</a></li>
-      <li><a href="#locations">הסניפים שלנו</a></li>
       <li><a href="#contact">צור קשר</a></li>
     </ul>
     <div class="nav-cta">
@@ -555,11 +515,11 @@
 <section class="hero">
   <div class="container hero-inner">
     <div class="reveal">
-      <div class="eyebrow">בית שמש · נחל אוריה 19</div>
+      <div class="eyebrow">אתרוגי בוטיק · בית חלקיה ועוד</div>
       <h1>ארבעת המינים,<br>ב<em>הידור</em> שמגיע לחג</h1>
-      <p class="lead">אתרוג, לולב, הדס וערבה - אצל אתרוגי גלזר. בואו לסניף המרכזי בבית שמש, או לאחד הסניפים הנוספים שלנו באזור.</p>
+      <p class="lead">אתרוג, לולב, הדס וערבה - אצל אתרוגי גלזר. מבחר בוטיק הכולל אתרוגי בית חלקיה ומקורות מובחרים נוספים, לבחירה אישית.</p>
       <div class="hero-actions">
-        <a href="#locations" class="btn btn-primary"><svg viewBox="0 0 24 24"><use href="#ic-pin"/></svg>הסניפים שלנו</a>
+        <a href="#contact" class="btn btn-primary"><svg viewBox="0 0 24 24"><use href="#ic-calendar"/></svg>לפרטים ותיאום</a>
         <a href="https://wa.me/972506409977" target="_blank" class="btn btn-whatsapp"><svg viewBox="0 0 24 24"><use href="#ic-chat"/></svg>שלחו הודעה בוואטסאפ</a>
       </div>
     </div>
@@ -690,34 +650,6 @@
   <img id="lightboxImg" src="" alt="">
 </div>
 
-<section id="locations" class="locations">
-  <div class="container">
-    <div class="head-block reveal">
-      <span class="eyebrow">איפה נמצא אותנו</span>
-      <h2 class="section-title">הסניפים שלנו</h2>
-      <p class="section-sub">הסניף המרכזי נמצא בבית שמש, ובנוסף יש לנו סניפים נוספים באזור.</p>
-    </div>
-    <div class="loc-grid">
-      <div class="loc-card main reveal">
-        <span class="loc-tag">סניף מרכזי</span>
-        <h3><svg viewBox="0 0 44 44"><use href="#ic-pin"/></svg>בית שמש</h3>
-        <p class="addr">נחל אוריה 19, בית שמש</p>
-      </div>
-      <div class="loc-card reveal">
-        <span class="loc-tag">סניף נוסף</span>
-        <h3><svg viewBox="0 0 44 44"><use href="#ic-pin"/></svg>רמה ג׳</h3>
-        <p class="note">לפרטים ומיקום מדויק - התקשרו אלינו.</p>
-      </div>
-      <div class="loc-card reveal">
-        <span class="loc-tag">סניף נוסף</span>
-        <h3><svg viewBox="0 0 44 44"><use href="#ic-pin"/></svg>רמה ד׳</h3>
-        <p class="note">לפרטים ומיקום מדויק - התקשרו אלינו.</p>
-      </div>
-    </div>
-    <p class="loc-footnote reveal">ועוד סניפים נוספים באזור - לפרטים מלאים על כל הסניפים, <a href="https://wa.me/972506409977" target="_blank">שלחו לנו הודעה בוואטסאפ</a> או התקשרו.</p>
-  </div>
-</section>
-
 <section id="contact">
   <div class="container">
     <div class="head-block reveal">
@@ -727,13 +659,6 @@
     </div>
     <div class="contact-grid">
       <div class="reveal">
-        <div class="info-item">
-          <svg class="ic" viewBox="0 0 44 44"><use href="#ic-pin"/></svg>
-          <div>
-            <h4>הסניף המרכזי</h4>
-            <p>נחל אוריה 19, בית שמש</p>
-          </div>
-        </div>
         <div class="info-item">
           <svg class="ic" viewBox="0 0 24 24"><use href="#ic-phone"/></svg>
           <div>
@@ -777,7 +702,7 @@
 
 <footer>
   <div class="container footer-row">
-    <div><b>נחל אוריה 19, בית שמש</b> · ועוד סניפים ברמה ג׳, רמה ד׳</div>
+    <div><b>אתרוגי גלזר</b> · אתרוגי בוטיק לחג הסוכות</div>
     <div>&copy; <span id="year"></span> כל הזכויות שמורות</div>
   </div>
   <div class="container footer-credit">
